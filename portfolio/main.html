@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>Портфолио</title>
+    </head>
+    <body id="main">
+        <h1>Портфолио Ильи</h1>
+
+        <div class="products">
+            
+        </div>
+        
+        <script>
+            class Product {
+                constructor(name,link,iconpath) {
+                    this.name = name;
+                    this.link = link;
+                    this.iconpath = iconpath;
+                }
+            }            
+            
+            let Products = [];
+            let product_field = document.getElementsByClassName("products")[0];
+            
+            product_field.inn
+            Init();
+
+            function AddProductToPage(product) {
+                var p = document.createElement("div");
+                p.className = "product";
+                p.innerHTML = '<a href="' +product.link+'"><input value="' + product.name +'" type="button"></a>';
+                product_field.appendChild(p);
+            }
+
+            function Init() {
+                Products.push(new Product("Pablo","products/Pablo/index.html","fuckyoyu"));
+                
+                for(a= 0; a < Products.length;a+=1) {
+                    AddProductToPage(Products[a]);
+                }
+            }
+
+        </script>
+    </body>
+</html>
